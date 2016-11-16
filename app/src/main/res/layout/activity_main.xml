@@ -10,24 +10,93 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="es.iesnervion.mrequena.ciclovida2.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
 
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/txtCiclo"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt"/>
+        android:text="Fase automatica" />
+
+    <EditText
+        android:id="@+id/txtEdit"
+        android:hint="Escribe aqui"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@id/txtCiclo"/>
     <Button
         android:id="@+id/btnPause"
+        android:text="Pause"
+        android:visibility="visible"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtEdit"
+        android:onClick="onClickPause"/>
+    <Button
+        android:id="@+id/btnResume"
+        android:text="Resume"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtEdit"
+        android:layout_toRightOf="@id/btnPause"
+        android:onClick="onClickResume"/>
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/btnResume"
+        android:src="@drawable/iconogaleria"
+
+        />
+    <Button
+        android:id="@+id/galeria"
+        android:text="Ir a Galeria"
+        android:visibility="visible"
+        android:layout_below="@id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickGaleria"/>
+
+    <TextView
+        android:id="@+id/tv_provincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/provincia"
+        android:layout_below="@id/galeria"/>
+
+    <Spinner
+        android:id="@+id/sp_provincia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/provincia_prompt"
+        android:spinnerMode="dropdown"
+        android:layout_below="@id/tv_provincia"/>
+
+    <TextView
+        android:id="@+id/tv_localidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/localidad"
+        android:layout_below="@id/sp_provincia"/>
+
+    <Spinner
+        android:id="@+id/sp_localidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/localidad_prompt"
+        android:spinnerMode="dropdown"
+        android:layout_below="@id/tv_localidad"/>
+
+    <Button
+        android:id="@+id/btnLugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="showLocalidadSelected"
+        android:text="@string/comprobar"
+        android:layout_below="@id/sp_localidad"/>
+
 </RelativeLayout>
